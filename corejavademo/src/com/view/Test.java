@@ -8,7 +8,7 @@ import com.service.ProductService;
 import com.service.ProductServiceImpl;
 
 public class Test {
-	// Declare it once here so all methods share the exact same service reference
+	// Declare it as "static" once here so all methods share the exact same service reference
 	static ProductService service = new ProductServiceImpl();
 
 	public static void main(String[] args) {
