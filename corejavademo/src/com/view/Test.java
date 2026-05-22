@@ -8,6 +8,9 @@ import com.service.ProductService;
 import com.service.ProductServiceImpl;
 
 public class Test {
+	// Declare it once here so all methods share the exact same service reference
+	static ProductService service = new ProductServiceImpl();
+
 	public static void main(String[] args) {
 		add();
 		getAll();
@@ -17,7 +20,11 @@ public class Test {
 
 	// add
 	static void add() {
-		ProductService service = new ProductServiceImpl();
+		/*
+		 * As ProductService is static at the very top this main class, we don't require
+		 * the below declaration
+		 */
+		// ProductService service = new ProductServiceImpl();
 		Scanner scn = new Scanner(System.in);
 
 		char flag = 'y';
@@ -44,14 +51,22 @@ public class Test {
 
 	// get all
 	static void getAll() {
-		ProductService service = new ProductServiceImpl();
+		/*
+		 * As ProductService is static at the very top this main class, we don't require
+		 * the below declaration
+		 */
+		// ProductService service = new ProductServiceImpl();
 		List<Product> plist = service.getAllProducts();
 		System.out.println(plist);
 	}
 
 	// delete
 	static void delete() {
-		ProductService service = new ProductServiceImpl();
+		/*
+		 * As ProductService is static at the very top this main class, we don't require
+		 * the below declaration
+		 */
+		// ProductService service = new ProductServiceImpl();
 		service.deleteProduct(0); // index = 0
 		// get all products after deleted
 		getAll();
